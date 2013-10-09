@@ -1,0 +1,13 @@
+body nav {
+  height: 100px;
+  width: 100%;
+}
+body nav ul.main_navigation {
+  text-align: center;
+}
+body nav ul.main_navigation li {
+  display: inline;
+}
+body .block {
+  height: 100px;
+}
