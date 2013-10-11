@@ -22,3 +22,34 @@ html
     script type="text/javascript" src="js/underscore.js"
     script type="text/javascript" src="js/backbone.js"
     script type="text/javascript" src="js/handlebars.js"
+    script id="students_entry_template" type="text/x-handlebars-template"
+      .student  id = "{{last_name}}"
+        .photo
+          img src="{{link_photo}}"
+        .student_name
+          |{{first_name}} {{last_name}}
+        .city
+          |город {{city}}
+        .social_networks
+          a href="{{link_vk}}"
+            #vkontakte.social_network
+          a href="{{link_facebook}}"
+            #facebook.social_network
+          a href="{{link_github}}"  
+            #github.social_network
+          a href="{{link_yaru}}"  
+            #yaru.social_network
+        .about_student
+          |{{about}}
+    script id="lections_entry_template" type="text/x-handlebars-template" 
+      .lection  id = "{{lection_id}}"
+        .lection_name
+          |{{name}}
+        .lector_name
+          |{{lector}}
+        .sources
+          span.video
+            a href="{{video_url}}" Видео
+          span.slides
+          a href="{{slides_url}}" Презентация
+    script type="text/javascript" src="js/index.js"
