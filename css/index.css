@@ -1,3 +1,6 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 body nav {
   height: 100px;
   width: 100%;
@@ -8,6 +11,51 @@ body nav ul.main_navigation {
 body nav ul.main_navigation li {
   display: inline;
 }
-body .block {
-  height: 100px;
+body .block .student {
+  width: 190px;
+  padding: 10px;
+  background: #cacaca;
+}
+body .block .student .photo {
+  width: 190px;
+  overflow: hidden;
+}
+body .block .student .student_name {
+  width: 190px;
+  font-size: large;
+  font-weight: bold;
+}
+body .block .student .city {
+  width: 190px;
+}
+body .block .student .social_networks {
+  width: 200px;
+  margin-left: -10px;
+}
+body .block .student .social_networks a {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+body .block .student .social_networks a .social_network {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+body .block .student .social_networks a #vkontakte {
+  background: url(/img/vk.png);
+}
+body .block .student .social_networks a #facebook {
+  background: url(/img/fb.png);
+}
+body .block .student .social_networks a #github {
+  background: url(/img/git.png);
+}
+body .block .student .social_networks a #yaru {
+  background: url(/img/ya.png);
+}
+body .block .student .about_student {
+  display: none;
 }
