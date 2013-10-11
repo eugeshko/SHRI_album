@@ -15,18 +15,26 @@ body .block .student {
   width: 190px;
   padding: 10px;
   background: #cacaca;
+  display: inline-block;
+  margin: 5px;
 }
 body .block .student .photo {
   width: 190px;
+  height: 190px;
   overflow: hidden;
+}
+body .block .student .photo img {
+  width: 190px;
 }
 body .block .student .student_name {
   width: 190px;
+  height: 40px;
   font-size: large;
   font-weight: bold;
 }
 body .block .student .city {
   width: 190px;
+  height: 40px;
 }
 body .block .student .social_networks {
   width: 200px;
