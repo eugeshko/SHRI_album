@@ -13,6 +13,11 @@ var students_collection_type = Backbone.Collection.extend({
         this.each(function(student) {
             student.paint();
         });
+    },
+    open_about: function(id) {
+        $(".student > .about_student").hide(100);
+        $("#" + id + ".student").prependTo($("#students"));
+        $("#" + id + " > .about_student").show(1000);
     }
 });
 
@@ -30,8 +35,21 @@ var student_view_type = Backbone.View.extend({
     }
 });
 
+var students_workspace = Backbone.Router.extend({
+    routes: {
+        "!/students/:id": "open_about"
+    },
+    open_about: function(id) {
+        students.open_about(id);
+    }
+});
+
 var students = new students_collection_type;
 
 var students_view = new student_view_type;
 
+var controller = new students_workspace();
+
+Backbone.history.start();
 students_view.render();
+
