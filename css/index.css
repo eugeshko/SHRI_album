@@ -52,16 +52,16 @@ body .block .student .social_networks a .social_network {
   height: 40px;
   display: inline-block;
 }
-body .block .student .social_networks a #vkontakte {
+body .block .student .social_networks a .vkontakte {
   background: url(/img/vk.png);
 }
-body .block .student .social_networks a #facebook {
+body .block .student .social_networks a .facebook {
   background: url(/img/fb.png);
 }
-body .block .student .social_networks a #github {
+body .block .student .social_networks a .github {
   background: url(/img/git.png);
 }
-body .block .student .social_networks a #yaru {
+body .block .student .social_networks a .yaru {
   background: url(/img/ya.png);
 }
 body .block .student .about_student {
