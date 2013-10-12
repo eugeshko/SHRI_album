@@ -19,33 +19,30 @@
                 </li>
             </ul>
         </nav>
-        <div class="block" id="school">
-            <h1>
-                О школе
-            </h1>
-        </div>
-        <div class="block" id="students">
-            <h1>
-                Студенты
-            </h1>
-        </div>
-        <div class="block" id="lections">
-            <h1>
-                Лекции
-            </h1>
-        </div>
+        <h1>
+            О школе
+        </h1>
+        <div class="block" id="school"></div>
+        <h1>
+            Студенты
+        </h1>
+        <div class="block" id="students"></div>
+        <h1>
+            Лекции  
+        </h1>
+        <div class="block" id="lections"></div>
         <link href="css/index.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
         <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
         <script src="http://documentcloud.github.io/backbone/backbone-min.js"></script>
         <script src="js/handlebars.js" type="text/javascript"></script>
         <script id="students_entry_template" type="text/x-handlebars-template">
-            <div class="student" id="{{last_name}}">
+            <div class="student" id="{{first_name}}_{{last_name}}">
                 <div class="photo">
                     <img src="{{link_photo}}">
                 </div>
                 <div class="student_name">
-                    <a href="#!/{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</a>
+                    <a href="#!/students/{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</a>
                 </div>
                 <div class="city">
                     город {{city}}
