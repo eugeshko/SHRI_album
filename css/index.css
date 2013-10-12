@@ -16,12 +16,15 @@ body .block .student {
   padding: 10px;
   background: #cacaca;
   display: inline-block;
+  float: left;
   margin: 5px;
 }
 body .block .student .photo {
   width: 190px;
   height: 190px;
   overflow: hidden;
+  text-align: center;
+  background: #aaaaaa;
 }
 body .block .student .photo img {
   width: 190px;
@@ -38,6 +41,7 @@ body .block .student .city {
 }
 body .block .student .social_networks {
   width: 200px;
+  height: 40px;
   margin-left: -10px;
 }
 body .block .student .social_networks a {

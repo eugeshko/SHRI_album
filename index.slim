@@ -18,27 +18,39 @@ html
     #lections.block
       h1 Лекции
     link type="text/css" rel="stylesheet" href="css/index.css" 
-    script type="text/javascript" src="js/jquery.js"
-    script type="text/javascript" src="js/underscore.js"
-    script type="text/javascript" src="js/backbone.js"
+    //script type="text/javascript" src="js/jquery.js"
+    //script type="text/javascript" src="js/underscore.js"
+    //script type="text/javascript" src="js/backbone.js"
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
+    script src="http://documentcloud.github.com/underscore/underscore-min.js"
+    script src="http://documentcloud.github.io/backbone/backbone-min.js"
     script type="text/javascript" src="js/handlebars.js"
     script id="students_entry_template" type="text/x-handlebars-template"
       .student  id = "{{last_name}}"
         .photo
           img src="{{link_photo}}"
         .student_name
-          |{{first_name}} {{last_name}}
+          a href="#!/{{first_name}}_{{last_name}}" 
+            |{{first_name}} {{last_name}}
         .city
           |город {{city}}
         .social_networks
+          |{{#if link_vk}}
           a href="{{link_vk}}"
             .vkontakte.social_network
+          |{{/if}}
+          |{{#if link_facebook}}
           a href="{{link_facebook}}"
             .facebook.social_network
+          |{{/if}}
+          |{{#if link_github}}
           a href="{{link_github}}"  
             .github.social_network
+          |{{/if}}
+          |{{#if link_yaru}}
           a href="{{link_yaru}}"  
             .yaru.social_network
+          |{{/if}}
         .about_student
           |{{about}}
     script id="lections_entry_template" type="text/x-handlebars-template" 
