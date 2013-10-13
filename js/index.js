@@ -17,6 +17,7 @@ var lections = new lections_collection_type();
 var student_view_type = Backbone.View.extend({
     tagName: "div",
     className: "student",
+
     render: function() {
         var source = $("#students_entry_template").html();
         var template = Handlebars.compile(source);
@@ -28,23 +29,26 @@ var student_view_type = Backbone.View.extend({
         };
         return this;
     },
+
     initialize: function() {
         this.listenTo(students, "change", this.render);
     },
+
     open_about: function(id) {
         $(".slides").hide();
-        $(".student > .about_student").hide(100);
+        $(".student > .about_student").hide();
         $("#" + id + ".student").prependTo($("#students"));
-        $("#" + id + " > .about_student").show(1000);
+        $("#" + id + " > .about_student").show(500);
         $('html, body').animate({
-        scrollTop: $("#students").offset().top
-        }, 1000);
+            scrollTop: $("#students").offset().top
+        }, 100);
     }
 });
 
 var lection_view_type = Backbone.View.extend({
     tagName: "div",
     className: "lection",
+
     render: function() {
         var source = $("#lections_entry_template").html();
         var template = Handlebars.compile(source);
@@ -56,39 +60,54 @@ var lection_view_type = Backbone.View.extend({
         };
         return this;
     },
+
     initialize: function() {
-        console.log("init lection");
         this.listenTo(lections, "change", this.render);
     },
+
     open_about: function(id) {
         $(".student > .about_student").hide();
         $(".slides").hide();
         $(".lection > .slides").hide(100);
         $("#" + id + ".lection").prependTo($("#lections"));
-        $("#" + id + " > .sources > .slides").show(1000);
+        $("#" + id + " > .sources > .slides").show(500);
         $('html, body').animate({
-        scrollTop: $("#lections").offset().top
-        }, 1000);
+            scrollTop: $("#lections").offset().top
+        }, 100);
     }
 });
 
 var students_view = new student_view_type({model: students});
 var lections_view = new lection_view_type({model: lections});
 
-$.getJSON("/js/students_JSON.json", function(data){
-    _.map(data, function(student_data){ 
-        var student = new student_model_type(student_data);
-        students.push(student);
-    });
-    students_view.render();
+$.ajax({
+    type: 'GET',
+    url: '/js/students_JSON.json',
+    dataType: 'json',
+    success: function(data) {
+        _.map(data, function(student_data){ 
+            var student = new student_model_type(student_data);
+            students.push(student);
+            });
+        students_view.render();
+        },
+    data: {},
+    async: false
 });
 
-$.getJSON("/js/lections_JSON.json", function(data){
-    _.map(data, function(lection_data){
-        var lection = new lection_model_type(lection_data);
-        lections.push(lection);
-    });
-    lections_view.render();
+$.ajax({
+    type: 'GET',
+    url: '/js/lections_JSON.json',
+    dataType: 'json',
+    success: function(data) {
+        _.map(data, function(lection_data){ 
+            var lection = new student_model_type(lection_data);
+            lections.push(lection);
+            });
+        lections_view.render();
+        },
+    data: {},
+    async: false
 });
 
 var students_workspace = Backbone.Router.extend({
@@ -96,9 +115,11 @@ var students_workspace = Backbone.Router.extend({
         "!/students/:id": "open_about_student",
         "!/lections/:id": "open_about_lection"
     },
+
     open_about_student: function(id) {
         students_view.open_about(id);
     },
+    
     open_about_lection: function(id) {
         lections_view.open_about(id);
     }
