@@ -1,17 +1,41 @@
 body {
+  margin: 0 10px;
+  background: #36302c;
+  color: #36302c;
   font-family: Arial, Helvetica, sans-serif;
 }
 body nav {
-  height: 100px;
   width: 100%;
+  background: #8c8c8c;
+  color: #8f1741;
+  font-size: x-large;
+  border-radius: 0 0 10px 10px;
+  -webkit-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
 }
 body nav ul.main_navigation {
   text-align: center;
 }
 body nav ul.main_navigation li {
-  display: inline;
+  display: inline-block;
+  padding: 20px;
 }
-body .block:after {
+body nav ul.main_navigation li a {
+  text-decoration: none;
+  color: #fbfbfb;
+}
+body .info_block {
+  background: #fbfbfb;
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+body .info_block h1 {
+  text-align: center;
+}
+body .info_block .block:after {
   content: "&nbsp;";
   display: block;
   clear: both;
@@ -19,91 +43,128 @@ body .block:after {
   height: 0;
   line-height: 0;
 }
-body .block .student {
-  padding: 10px;
-  background: #cacaca;
-  display: inline-block;
-  float: left;
-  margin: 5px;
+body .info_block .block {
+  text-align: center;
 }
-body .block .student .photo {
+body .info_block .block .student {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  background: #b5b5b5;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+body .info_block .block .student .short_info {
+  float: left;
+}
+body .info_block .block .student .short_info .photo {
   width: 190px;
   height: 190px;
   overflow: hidden;
-  text-align: center;
-  background: #aaaaaa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
-body .block .student .photo img {
+body .info_block .block .student .short_info .photo img {
   width: 190px;
 }
-body .block .student .student_name {
+body .info_block .block .student .short_info .student_name {
   width: 190px;
   height: 40px;
   font-size: large;
   font-weight: bold;
 }
-body .block .student .city {
+body .info_block .block .student .short_info .student_name a {
+  color: #36302c;
+}
+body .info_block .block .student .short_info .city {
   width: 190px;
   height: 40px;
 }
-body .block .student .social_networks {
+body .info_block .block .student .short_info .social_networks {
   width: 200px;
   height: 40px;
   margin-left: -10px;
 }
-body .block .student .social_networks a {
+body .info_block .block .student .short_info .social_networks a {
   width: 40px;
   height: 40px;
   margin-left: 10px;
   text-decoration: none;
   display: inline-block;
 }
-body .block .student .social_networks a .social_network {
+body .info_block .block .student .short_info .social_networks a .social_network {
   width: 40px;
   height: 40px;
   display: inline-block;
+  overflow: hidden;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
 }
-body .block .student .social_networks a .vkontakte {
+body .info_block .block .student .short_info .social_networks a .vkontakte {
   background: url(/img/vk.png);
 }
-body .block .student .social_networks a .facebook {
+body .info_block .block .student .short_info .social_networks a .facebook {
   background: url(/img/fb.png);
 }
-body .block .student .social_networks a .github {
+body .info_block .block .student .short_info .social_networks a .github {
   background: url(/img/git.png);
 }
-body .block .student .social_networks a .yaru {
+body .info_block .block .student .short_info .social_networks a .yaru {
   background: url(/img/ya.png);
 }
-body .block .student .about_student {
+body .info_block .block .student .about_student {
+  max-width: 40em;
   display: none;
-  background: #cacaca;
 }
-body .block .lection {
-  padding: 10px;
-  background: #cacaca;
+body .info_block .block .lection {
+  background: #b5b5b5;
   display: inline-block;
-  float: left;
+  vertical-align: top;
+  text-align: left;
   margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
-body .block .lection .lection_name {
+body .info_block .block .lection .lection_name {
   width: 580px;
   height: 40px;
   font-size: large;
   font-weight: bold;
 }
-body .block .lection .lector_name {
+body .info_block .block .lection .lection_name a {
+  color: #36302c;
+}
+body .info_block .block .lection .lector_name {
   width: 580px;
   height: 40px;
 }
-body .block .lection .sources iframe.video {
+body .info_block .block .lection .sources iframe.video {
   width: 580px;
   height: 300px;
   display: block;
 }
-body .block .lection .sources iframe.slides {
-  margin-top: 30px;
+body .info_block .block .lection .sources iframe.slides {
   width: 580px;
   height: 380px;
+  margin-top: 30px;
   display: none;
+}
+body .info_block #school .about_school {
+  width: 40em;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+body .info_block #school .video {
+  width: 600px;
+  height: 300px;
+  display: inline-block;
+  vertical-align: middle;
 }
