@@ -64,15 +64,15 @@
             </div>
         </script>
         <script id="lections_entry_template" type="text/x-handlebars-template">
-            <div class="lection" id="{{lection_id}}">
+            <div class="lection" id="{{id}}">
                 <div class="lection_name">
-                    {{name}}
+                    <a href="#!/lections/{{id}}">{{name}}</a>
                 </div>
                 <div class="lector_name">
-                    {{lector}}
+                    {{lector_id}}
                 </div>
                 <div class="sources">
-                    <span class="video"><a href="{{video_url}}">Видео</a></span><span class="slides"></span><a href="{{slides_url}}">Презентация</a>
+                    {{#if video_url}}<iframe class="video" frameborder="0" src="{{video_url}}"></iframe>{{/if}}{{#if slides_url}}<iframe class="slides" frameborder="0" src="{{slides_url}}"></iframe>{{/if}}
                 </div>
             </div>
         </script>

@@ -51,14 +51,17 @@ html
         .about_student
           |{{about}}
     script id="lections_entry_template" type="text/x-handlebars-template" 
-      .lection  id = "{{lection_id}}"
+      .lection  id = "{{id}}"
         .lection_name
-          |{{name}}
+          a href="#!/lections/{{id}}" 
+            |{{name}}
         .lector_name
-          |{{lector}}
+          |{{lector_id}}
         .sources
-          span.video
-            a href="{{video_url}}" Видео
-          span.slides
-          a href="{{slides_url}}" Презентация
+          |{{#if video_url}}
+          iframe.video src="{{video_url}}" frameborder="0" 
+          |{{/if}}
+          |{{#if slides_url}}
+          iframe.slides src="{{slides_url}}" frameborder="0"
+          |{{/if}}
     script type="text/javascript" src="js/index.js"
