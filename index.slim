@@ -31,30 +31,31 @@ html
       iframe.video src="{{video_url}}" frameborder="0" 
     script id="students_entry_template" type="text/x-handlebars-template"
       .student  id = "{{first_name}}_{{last_name}}"
-        .photo
-          img src="{{link_photo}}"
-        .student_name
-          a href="#!/students/{{first_name}}_{{last_name}}" 
-            |{{first_name}} {{last_name}}
-        .city
-          |город {{city}}
-        .social_networks
-          |{{#if link_vk}}
-          a href="{{link_vk}}"
-            .vkontakte.social_network
-          |{{/if}}
-          |{{#if link_facebook}}
-          a href="{{link_facebook}}"
-            .facebook.social_network
-          |{{/if}}
-          |{{#if link_github}}
-          a href="{{link_github}}"  
-            .github.social_network
-          |{{/if}}
-          |{{#if link_yaru}}
-          a href="{{link_yaru}}"  
-            .yaru.social_network
-          |{{/if}}
+        .short_info
+          .photo
+            img src="{{link_photo}}"
+          .student_name
+            a href="#!/students/{{first_name}}_{{last_name}}" 
+              |{{first_name}} {{last_name}}
+          .city
+            |город {{city}}
+          .social_networks
+            |{{#if link_vk}}
+            a href="{{link_vk}}"
+              .vkontakte.social_network
+            |{{/if}}
+            |{{#if link_facebook}}
+            a href="{{link_facebook}}"
+              .facebook.social_network
+            |{{/if}}
+            |{{#if link_github}}
+            a href="{{link_github}}"  
+              .github.social_network
+            |{{/if}}
+            |{{#if link_yaru}}
+            a href="{{link_yaru}}"  
+              .yaru.social_network
+            |{{/if}}
         .about_student
           |{{about}}
     script id="lections_entry_template" type="text/x-handlebars-template" 

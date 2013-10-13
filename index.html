@@ -50,25 +50,27 @@
         </script>
         <script id="students_entry_template" type="text/x-handlebars-template">
             <div class="student" id="{{first_name}}_{{last_name}}">
-                <div class="photo">
-                    <img src="{{link_photo}}">
-                </div>
-                <div class="student_name">
-                    <a href="#!/students/{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</a>
-                </div>
-                <div class="city">
-                    город {{city}}
-                </div>
-                <div class="social_networks">
-                    {{#if link_vk}}<a href="{{link_vk}}">
-                        <div class="vkontakte social_network"></div>
-                    </a>{{/if}}{{#if link_facebook}}<a href="{{link_facebook}}">
-                        <div class="facebook social_network"></div>
-                    </a>{{/if}}{{#if link_github}}<a href="{{link_github}}">
-                        <div class="github social_network"></div>
-                    </a>{{/if}}{{#if link_yaru}}<a href="{{link_yaru}}">
-                        <div class="yaru social_network"></div>
-                    </a>{{/if}}
+                <div class="short_info">
+                    <div class="photo">
+                        <img src="{{link_photo}}">
+                    </div>
+                    <div class="student_name">
+                        <a href="#!/students/{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</a>
+                    </div>
+                    <div class="city">
+                        город {{city}}
+                    </div>
+                    <div class="social_networks">
+                        {{#if link_vk}}<a href="{{link_vk}}">
+                            <div class="vkontakte social_network"></div>
+                        </a>{{/if}}{{#if link_facebook}}<a href="{{link_facebook}}">
+                            <div class="facebook social_network"></div>
+                        </a>{{/if}}{{#if link_github}}<a href="{{link_github}}">
+                            <div class="github social_network"></div>
+                        </a>{{/if}}{{#if link_yaru}}<a href="{{link_yaru}}">
+                            <div class="yaru social_network"></div>
+                        </a>{{/if}}
+                    </div>
                 </div>
                 <div class="about_student">
                     {{about}}
