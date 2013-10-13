@@ -7,6 +7,13 @@ body
       text-align: center
       li
         display: inline
+  .block:after 
+    content: "&nbsp;"
+    display: block
+    clear: both
+    visibility: hidden
+    height: 0
+    line-height: 0
   .block
     .student
       padding: 10px
@@ -55,3 +62,29 @@ body
       .about_student
         display: none
         background: #CACACA
+    .lection
+      padding: 10px
+      //width: 580px
+      //height: 380px
+      background: #CACACA
+      display: inline-block
+      float: left
+      margin: 5px
+      .lection_name
+        width: 580px
+        height: 40px
+        font-size: large
+        font-weight: bold
+      .lector_name
+        width: 580px
+        height: 40px
+      .sources
+        iframe.video 
+          width: 580px
+          height: 300px
+          display: block
+        iframe.slides 
+          margin-top: 30px
+          width: 580px
+          height: 380px
+          display: none

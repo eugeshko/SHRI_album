@@ -11,6 +11,14 @@ body nav ul.main_navigation {
 body nav ul.main_navigation li {
   display: inline;
 }
+body .block:after {
+  content: "&nbsp;";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
 body .block .student {
   padding: 10px;
   background: #cacaca;
@@ -70,4 +78,32 @@ body .block .student .social_networks a .yaru {
 body .block .student .about_student {
   display: none;
   background: #cacaca;
+}
+body .block .lection {
+  padding: 10px;
+  background: #cacaca;
+  display: inline-block;
+  float: left;
+  margin: 5px;
+}
+body .block .lection .lection_name {
+  width: 580px;
+  height: 40px;
+  font-size: large;
+  font-weight: bold;
+}
+body .block .lection .lector_name {
+  width: 580px;
+  height: 40px;
+}
+body .block .lection .sources iframe.video {
+  width: 580px;
+  height: 300px;
+  display: block;
+}
+body .block .lection .sources iframe.slides {
+  margin-top: 30px;
+  width: 580px;
+  height: 380px;
+  display: none;
 }
