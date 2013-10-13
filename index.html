@@ -84,7 +84,7 @@
                     {{lector_id}}
                 </div>
                 <div class="sources">
-                    {{#if video_url}}<iframe class="video" frameborder="0" src="{{video_url}}"></iframe>{{/if}}{{#if slides_url}}<iframe class="slides" frameborder="0" src="{{slides_url}}"></iframe>{{/if}}
+                    {{#if video_url}}<iframe class="video" frameborder="0" src="{{video_url}}"></iframe>{{else}}<iframe class="video" frameborder="0" src="{{slides_url}}"></iframe>{{/if}}{{#if slides_url}}{{#if video_url}}<iframe class="slides" frameborder="0" src="{{slides_url}}"></iframe>{{/if}}          {{/if}}
                 </div>
             </div>
         </script>

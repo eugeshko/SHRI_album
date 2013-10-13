@@ -66,9 +66,13 @@ html
           |{{lector_id}}
         .sources
           |{{#if video_url}}
-          iframe.video src="{{video_url}}" frameborder="0" 
+          iframe.video src="{{video_url}}" frameborder="0"
+          |{{else}}
+          iframe.video src="{{slides_url}}" frameborder="0"
           |{{/if}}
           |{{#if slides_url}}
+          |{{#if video_url}}
           iframe.slides src="{{slides_url}}" frameborder="0"
+          |{{/if}}          
           |{{/if}}
     script type="text/javascript" src="js/index.js"
