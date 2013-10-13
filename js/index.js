@@ -14,6 +14,10 @@ var lections_collection_type = Backbone.Collection.extend({
 
 var lections = new lections_collection_type();
 
+var school_model_type = Backbone.Model.extend({});
+
+var school = new school_model_type();
+
 var student_view_type = Backbone.View.extend({
     tagName: "div",
     className: "student",
@@ -77,8 +81,26 @@ var lection_view_type = Backbone.View.extend({
     }
 });
 
+var school_view_type = Backbone.View.extend({
+    tagName: "div",
+    className: "school",
+
+    render: function() {
+        var source = $("#school_entry_template").html();
+        var template = Handlebars.compile(source);
+        var html = template(school.attributes);
+        $("#school").append(html);    
+        return this;
+    },
+
+    initialize: function() {
+        this.listenTo(school, "change", this.render);
+    }
+});
+
 var students_view = new student_view_type({model: students});
 var lections_view = new lection_view_type({model: lections});
+var school_view = new school_view_type({model: school});
 
 $.ajax({
     type: 'GET',
@@ -110,6 +132,18 @@ $.ajax({
     async: false
 });
 
+$.ajax({
+    type: 'GET',
+    url: '/js/school_JSON.json',
+    dataType: 'json',
+    success: function(data) {
+        school = new student_model_type(data);
+        school_view.render();
+        },
+    data: {},
+    async: false
+});
+
 var students_workspace = Backbone.Router.extend({
     routes: {
         "!/students/:id": "open_about_student",
@@ -119,7 +153,7 @@ var students_workspace = Backbone.Router.extend({
     open_about_student: function(id) {
         students_view.open_about(id);
     },
-    
+
     open_about_lection: function(id) {
         lections_view.open_about(id);
     }

@@ -11,17 +11,24 @@ html
           a href="#students" Студенты
         li
           a href="#lections" Лекции
-    h1 О школе
-    #school.block
-    h1 Студенты
-    #students.block
-    h1 Лекции  
-    #lections.block
+    .info_block
+      h1 О школе
+      #school.block
+    .info_block
+      h1 Студенты
+      #students.block
+    .info_block  
+      h1 Лекции  
+      #lections.block
     link type="text/css" rel="stylesheet" href="css/index.css" 
     script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
     script src="http://documentcloud.github.com/underscore/underscore-min.js"
     script src="http://documentcloud.github.io/backbone/backbone-min.js"
     script type="text/javascript" src="js/handlebars.js"
+    script id="school_entry_template" type="text/x-handlebars-template" 
+      .about_school
+        |{{about}}
+      iframe.video src="{{video_url}}" frameborder="0" 
     script id="students_entry_template" type="text/x-handlebars-template"
       .student  id = "{{first_name}}_{{last_name}}"
         .photo
