@@ -168,3 +168,7 @@ body .info_block #school .video {
   display: inline-block;
   vertical-align: middle;
 }
+body .info_block #networks #vk_groups {
+  display: inline-block;
+  vertical-align: middle;
+}

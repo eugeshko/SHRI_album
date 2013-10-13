@@ -11,6 +11,8 @@ html
           a href="#students" Студенты
         li
           a href="#lections" Лекции
+        li
+          a href="#networks" Социальные сети
     .info_block
       h1 О школе
       #school.block
@@ -20,6 +22,10 @@ html
     .info_block  
       h1 Лекции  
       #lections.block
+    .info_block  
+      h1 Социальные сети  
+      #networks.block
+         #vk_groups
     link type="text/css" rel="stylesheet" href="css/index.css" 
     script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
     script src="http://documentcloud.github.com/underscore/underscore-min.js"
@@ -28,7 +34,7 @@ html
     script id="school_entry_template" type="text/x-handlebars-template" 
       .about_school
         |{{about}}
-      iframe.video src="{{video_url}}" frameborder="0" 
+      iframe.video src="{{video_url}}" frameborder="0"
     script id="students_entry_template" type="text/x-handlebars-template"
       .student  id = "{{first_name}}_{{last_name}}"
         .short_info
@@ -77,3 +83,6 @@ html
           |{{/if}}          
           |{{/if}}
     script type="text/javascript" src="js/index.js"
+    script type="text/javascript" src="//vk.com/js/api/openapi.js?101"
+    script type="text/javascript" src="js/vk.js"
+
