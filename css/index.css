@@ -168,3 +168,6 @@ body .info_block #school .video {
   display: inline-block;
   vertical-align: middle;
 }
+body .info_block #networks #vk_groups, body .info_block #networks .instagram {
+  display: inline-block;
+}
